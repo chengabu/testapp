@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TestAppLibrary</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="radio_value_http">Http</string>
+    <string name="radio_value_https">Https</string>
+    <string name="config_num_of_url">Number of request for per url</string>
+    
+    <string-array name="caseNames">
+        <item>Http Request With API</item>
+        <!-- item>Async Update Result for Http Request Without API</item -->
+    </string-array>
+    
+    <string-array name="caseActivityClasses">
+        <item>com.example.moblieapmtestdemo.HttpRequestWithoutAPI</item>
+        <!-- item>com.example.moblieapmtestdemo.AsyncUpdateHttpRequestWithoutAPI</item -->
+    </string-array>
+    <string-array name="differentDomainUrls">
+        <item>http://www.baidu.com/#wd=</item>
+        <item>http://cn.bing.com/search?q=2</item>
+        <!--item>http://www.akamai.cn/enzs/html/misc/search_results.html?search_query=</item-->
+        <item>http://search.jd.com/Search?keyword=</item>
+        <item>http://s.taobao.com/search?q=</item>
+        <item>http://www.sogou.com/sogou?query=</item>
+        <!-- item>http://www.akamai.cn/enzs/html/solutions/index.html</item>
+        <item>http://www.akamai.cn/enzs/html/technology/index.html</item>
+        <item>http://www.akamai.cn/enzs/html/industry/index.html</item>
+        <item>http://www.akamai.cn/enzs/html/customers/index.html</item>
+        <item>http://www.akamai.cn/enzs/html/partners/index.html</item>
+        <item>http://www.akamai.cn/enzs/html/careers/index.html</item>
+        <item>com.example.moblieapmtestdemo.AsyncUpdateHttpRequestWithoutAPI</item -->
+    </string-array>
+    <string-array name="differentDomainHttpsUrls">
+        <item>https://www.bing.com</item>
+        <item>https://www.google.com.hk</item>
+        <item>https://github.com/explore</item>
+        <!--  item>https://ibsbjstar.ccb.com.cn/app/V5/CN/STY1/login.jsp</item>
+        <item>https://blogs.oracle.com/</item-->
+    </string-array>
+</resources>

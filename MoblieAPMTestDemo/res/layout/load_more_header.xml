@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+    
+    <!--  EditText android:id="@+id/count"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:inputType="number"/>
+    
+    <EditText android:id="@+id/path"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center"
+        android:inputType="textUri"/-->
+
+    <Button
+        android:id="@+id/loadMoreheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="More..."/>
+    
+    <Button
+        android:id="@+id/HistoryResponseTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="HART"/>
+
+</LinearLayout>
