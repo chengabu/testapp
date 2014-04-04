@@ -23,15 +23,15 @@
         android:text="More..."/>
     
     <Button
-        android:id="@+id/averageResponseTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:text="ART"/>
-    
-    <Button
         android:id="@+id/HistoryResponseTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
         android:text="HART"/>
+    
+    <com.example.testapplibrary.custom.ShowMemInfoButton
+        android:id="@+id/ShowMemInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:text="MemInfo"/>
 
 </LinearLayout>
