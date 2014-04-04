@@ -20,7 +20,7 @@ import android.util.Log;
 
 public class HttpRequstResultProvider extends ContentProvider {
 
-public final static String AUTHORITY = "com.dell.test.withapi.http";
+public final static String AUTHORITY = "com.dell.test.withoutapi.http";
 public final static String DBNAME = "HTTPDB";
 public final static String HTTP_TABLE_NAME = "HTTP_RESULT";
 public final static String RESPONE_TIME_TABLE_NAME = "RESPONSE_TIME";
