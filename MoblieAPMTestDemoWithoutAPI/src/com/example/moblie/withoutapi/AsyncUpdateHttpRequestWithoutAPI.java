@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.testapplibrary.adapter.AsyncUpdateAdapter;
+import com.example.testapplibrary.database.HttpRequstResultProvider;
 import com.example.testapplibrary.task.InsertDbTask;
 
 public class AsyncUpdateHttpRequestWithoutAPI extends Activity implements
@@ -87,7 +88,7 @@ protected void onCreate(Bundle savedInstanceState) {
 			dialog.setMessage("Saving data...");
 			dialog.show();
 			Future<Boolean> furture = executorService.submit(new InsertDbTask(AsyncUpdateHttpRequestWithoutAPI.this,
-							adapter.getContentValues()));
+							adapter.getContentValues(), HttpRequstResultProvider.RESPONSE_TIME_CONTENT_URI));
 			try {
 				furture.get();
 			} catch (InterruptedException e) {

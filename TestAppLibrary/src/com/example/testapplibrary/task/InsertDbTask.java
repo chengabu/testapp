@@ -7,27 +7,34 @@ import java.util.concurrent.Callable;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
+import android.net.Uri;
+
+import com.example.testapplibrary.database.HttpRequstResultProvider;
 
 
 public class InsertDbTask implements Callable<Boolean> {
 	private Context context;
 	private List<ContentValues> values = new ArrayList<ContentValues>();
-	public InsertDbTask(Context context, ContentValues values) {
-		super();
-		this.context = context;
-		this.values.add(values);
-	}
-	public InsertDbTask(Context context, List<ContentValues> values) {
+	private Uri uri;
+	
+	public InsertDbTask(Context context, List<ContentValues> values, Uri uri) {
 		super();
 		this.context = context;
 		this.values = values;
+		this.uri = uri;
+	}
+	public InsertDbTask(Context context, ContentValues values, Uri uri) {
+		super();
+		this.context = context;
+		this.values.add(values);
+		this.uri = uri;
 	}
 	
 	@Override
 	public Boolean call() throws Exception {
 		ContentResolver resover = context.getContentResolver();
 		for (ContentValues value : values) {
-//			resover.insert(HttpRequstResultProvider.HTTP_CONTENT_URI, value);
+			resover.insert(HttpRequstResultProvider.HTTP_CONTENT_URI, value);
 		}
 		values.clear();
 		return true;

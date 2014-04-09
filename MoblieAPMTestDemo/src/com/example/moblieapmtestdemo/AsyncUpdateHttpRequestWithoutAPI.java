@@ -9,6 +9,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.apache.http.client.HttpRequestRetryHandler;
+import org.apache.http.impl.io.HttpRequestParser;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -23,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.testapplibrary.adapter.AsyncUpdateAdapter;
+import com.example.testapplibrary.database.HttpRequstResultProvider;
 import com.example.testapplibrary.task.InsertDbTask;
 
 
@@ -88,7 +92,7 @@ protected void onCreate(Bundle savedInstanceState) {
 			dialog.setMessage("Saving data...");
 			dialog.show();
 			Future<Boolean> furture = executorService.submit(new InsertDbTask(AsyncUpdateHttpRequestWithoutAPI.this,
-							adapter.getContentValues()));
+							adapter.getContentValues(), HttpRequstResultProvider.RESPONSE_TIME_CONTENT_URI));
 			try {
 				furture.get();
 			} catch (InterruptedException e) {
