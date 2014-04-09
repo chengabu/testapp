@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_main);
+	setContentView(com.example.testapplibrary.R.layout.memory_info_main);
 	initExecuteTask();
 	
 }
