@@ -12,6 +12,8 @@ import android.widget.Button;
 
 public class ShowMemInfoButton extends Button {
 
+private AlertDialog dialog;
+
 public ShowMemInfoButton(Context context) {
 	super(context);
 	addShowMemInfoAction();
@@ -42,20 +44,29 @@ public void addShowMemInfoAction() {
 							.append(meminfo.getTotalPrivateDirty()).append("\n").append("Avail memory : ")
 							.append(systemMemoryInfo.availMem).append("\n").append("Total memory : ")
 							.append(systemMemoryInfo.totalMem);
-			final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-			builder.setTitle("Memory Consumption");
-			builder.setMessage(buffer.toString());
-			builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					dialog.dismiss();
-				}
-			});
-			AlertDialog dialog = builder.create();
+			if (dialog == null) {
+				dialog = initDialog(buffer);
+			} else {
+				dialog.setMessage(buffer.toString());
+			}
 			dialog.show();
 		}
+
 	});
 }
 
+private AlertDialog initDialog(StringBuffer buffer) {
+	final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+	builder.setTitle("Memory Consumption");
+	builder.setMessage(buffer.toString());
+	builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			dialog.dismiss();
+		}
+	});
+	AlertDialog dialog = builder.create();
+	return dialog;
+}
 }
