@@ -290,7 +290,7 @@ private static final String SQL_CREATE_RESPONSE_TIME_TABLE = "CREATE TABLE "
 private static final String SQL_CREATE_MEMORY_TABLE = "CREATE TABLE "
 														+ HttpRequstResultProvider.MEMORY_TABLE_NAME +
 														" " + "(" + HttpRequstResultProvider.COLUMN_ID
-														+ " TEXT PRIMARY KEY AUTOINCREMENT, "
+														+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
 														+ HttpRequstResultProvider.COLUMN_WITH_API + " REAL, "
 														+ HttpRequstResultProvider.COLUMN_PPS + " INTEGER, "
 														+ HttpRequstResultProvider.COLUMN_PRIVATE_DIRTY + " INTEGER, "
