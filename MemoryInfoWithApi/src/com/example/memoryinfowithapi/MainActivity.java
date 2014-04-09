@@ -1,4 +1,4 @@
-package com.example.memoryinfowithoutapi;
+package com.example.memoryinfowithapi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.memory_info_main);
+	setContentView(R.layout.activity_main);
 	initExecuteTask();
 	
 }
@@ -38,7 +38,7 @@ private void initExecuteTask() {
 	
 	HttpRequestTask task = new HttpRequestTask(this, urls);
 	UpdateHttpViewPostAction updateHttpViewPostAction = new UpdateHttpViewPostAction(httpHandler);
-	CollectMemoryPostAction collectMemoryPostAction = new CollectMemoryPostAction(this, memoryHandler);
+	CollectMemoryPostAction collectMemoryPostAction = new CollectMemoryPostAction(this, memoryHandler, true);
 	task.addPostAction(updateHttpViewPostAction);
 	task.addPostAction(collectMemoryPostAction);
 	
