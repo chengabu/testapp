@@ -40,7 +40,7 @@ public void addShowMemInfoAction() {
 			StringBuffer buffer = new StringBuffer();
 			buffer.append("PPS : ").append(meminfo.getTotalPss()).append("\n").append("Private dirty : ")
 							.append(meminfo.getTotalPrivateDirty()).append("\n").append("Avail memory : ")
-							.append(systemMemoryInfo.availMem).append("\n").append("Avail memory : ")
+							.append(systemMemoryInfo.availMem).append("\n").append("Total memory : ")
 							.append(systemMemoryInfo.totalMem);
 			final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 			builder.setTitle("Memory Consumption");

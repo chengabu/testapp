@@ -98,7 +98,7 @@ private void initFooter(ListView listView, final ArrayAdapter<String> adapter, f
 
 private void initHeader(ListView listView, final ArrayAdapter<String> adapter, final List<String> urls) {
 
-	View headerView = getLayoutInflater().inflate(R.layout.load_more_header, null);
+	View headerView = getLayoutInflater().inflate(com.example.testapplibrary.R.layout.load_more_header, null);
 	listView.addHeaderView(headerView);
 	Button loadMoreButtonHeader = (Button) headerView.findViewById(R.id.loadMoreheader);
 
