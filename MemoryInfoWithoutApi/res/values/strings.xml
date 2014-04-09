@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MemoryInfoWithoutApi</string>
+    <string name="action_settings">Settings</string>
+    <string name="http_text">Sending http request...</string>
+    <string name="memory_text">Wait to start collecting memory info</string>
+
+</resources>
