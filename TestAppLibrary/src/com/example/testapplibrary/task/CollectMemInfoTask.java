@@ -71,7 +71,7 @@ public void run() {
 		value.put(HttpRequstResultProvider.COLUMN_UPDATED_AT, currentDate);
 		contentValues.add(value);
 
-		if (contentValues.size() % 50 == 0) {
+		if (contentValues.size() % 50 == 0 || i >= recordSize) {
 			try {
 				new InsertDbTask(context, contentValues, HttpRequstResultProvider.MEMORY_CONTENT_URI).call();
 				contentValues.clear();
