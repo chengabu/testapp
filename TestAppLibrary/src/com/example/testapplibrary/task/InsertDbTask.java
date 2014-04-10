@@ -34,7 +34,7 @@ public class InsertDbTask implements Callable<Boolean> {
 	public Boolean call() throws Exception {
 		ContentResolver resover = context.getContentResolver();
 		for (ContentValues value : values) {
-			resover.insert(HttpRequstResultProvider.HTTP_CONTENT_URI, value);
+			resover.insert(uri, value);
 		}
 		values.clear();
 		return true;
