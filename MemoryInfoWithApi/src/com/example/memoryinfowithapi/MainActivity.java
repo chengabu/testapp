@@ -8,17 +8,29 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.dell.app.FoglightAPM.FoglightAPM;
+import com.dell.app.FoglightAPM.annotation.FogAnnotation;
 import com.example.testapplibrary.custom.handler.UpdateViewTextHandler;
 import com.example.testapplibrary.task.CollectMemoryPostAction;
 import com.example.testapplibrary.task.HttpRequestTask;
 import com.example.testapplibrary.task.UpdateHttpViewPostAction;
 
+@FogAnnotation(
+//				beaconURL = "http://10.8.252.236/wordpress/archiverProxy?op=uploadhitdata"
+				beaconURL = "http://10.8.255.236:7630/archiverProxy?op=uploadhitdata"
+//				beaconURL = "http://10.8.252.230/wordpress/archiverProxy.php?op=uploadhitdata"
+			)
 public class MainActivity extends Activity {
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
+	FoglightAPM.initialize(this, "MemoryInfoTestApp", "1");
+
 	super.onCreate(savedInstanceState);
 	setContentView(com.example.testapplibrary.R.layout.memory_info_main);
+	
+	FoglightAPM.recordAppScreenStart("HttpRequestWithoutAPIActivity");
+	
 	initExecuteTask();
 	
 }
@@ -56,6 +68,12 @@ public boolean onCreateOptionsMenu(Menu menu) {
 	// Inflate the menu; this adds items to the action bar if it is present.
 	getMenuInflater().inflate(R.menu.main, menu);
 	return true;
+}
+
+@Override
+protected void onDestroy() {
+	FoglightAPM.recordAppScreenStop();
+	super.onDestroy();
 }
 
 }
