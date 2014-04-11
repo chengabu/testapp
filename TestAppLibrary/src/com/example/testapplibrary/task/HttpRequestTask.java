@@ -1,11 +1,7 @@
 package com.example.testapplibrary.task;
 
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -14,8 +10,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.util.Log;
 
@@ -103,6 +97,7 @@ private void executeRequests() {
 					e.printStackTrace();
 				} catch (TimeoutException e) {
 					Log.d("HttpRequestTask", "time out to get response");
+					e.printStackTrace();
 				}
 			}
 		}
