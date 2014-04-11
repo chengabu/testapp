@@ -49,7 +49,6 @@ public HttpRequestModel call() throws Exception {
 		
 		model = getResultModel(responseTime, method, con, responseCode, responseMessage);
 		
-		con.disconnect();
 	} finally {
 		if (con != null) {
 			con.disconnect();

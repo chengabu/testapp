@@ -5,24 +5,21 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import android.app.ActivityManager;
-import android.app.ActivityManager.MemoryInfo;
 import android.content.ContentValues;
 import android.content.Context;
-import android.os.Debug;
-import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
 import com.example.testapplibrary.custom.handler.UpdateViewTextHandler;
 import com.example.testapplibrary.database.HttpRequstResultProvider;
+import com.example.testapplibrary.util.CommonUtils;
 
 public class CollectMemInfoTask implements Runnable {
 
-private Context context;
-private UpdateViewTextHandler handler;
-private boolean withApi;
-private List<ContentValues> contentValues;
+protected Context context;
+protected UpdateViewTextHandler handler;
+protected boolean withApi;
+protected List<ContentValues> contentValues;
 
 public CollectMemInfoTask(Context context) {
 	this(context, false);
@@ -48,58 +45,86 @@ public CollectMemInfoTask(Context context, UpdateViewTextHandler handler, boolea
 public void run() {
 
 	int recordSize = 20000;
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
 	for (int i = 1; i <= recordSize; i++) {
-		Log.d("Collect memory info", "The " + i + " time to collect memory info");
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
-		String currentDate = format.format(new Date());
-
-		ActivityManager mamager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-		MemoryInfo systemMemoryInfo = new MemoryInfo();
-		mamager.getMemoryInfo(systemMemoryInfo);
-		Debug.MemoryInfo meminfo = new Debug.MemoryInfo();
-		Debug.getMemoryInfo(meminfo);
-
-		ContentValues value = new ContentValues();
-		value.put(HttpRequstResultProvider.COLUMN_WITH_API, withApi);
-		value.put(HttpRequstResultProvider.COLUMN_PPS, meminfo.getTotalPss());
-
-		value.put(HttpRequstResultProvider.COLUMN_PRIVATE_DIRTY, meminfo.getTotalPrivateDirty());
-//		value.put(HttpRequstResultProvider.COLUMN_PRIVATE_CLEAN, meminfo.getTotalPrivateClean());
-		value.put(HttpRequstResultProvider.COLUMN_SHARED_DIRTY, meminfo.getTotalSharedDirty());
-//		value.put(HttpRequstResultProvider.COLUMN_SHARED_CLEAN, meminfo.getTotalSharedClean());
-		value.put(HttpRequstResultProvider.COLUMN_CREATED_AT, currentDate);
-		value.put(HttpRequstResultProvider.COLUMN_UPDATED_AT, currentDate);
-		contentValues.add(value);
-
-		if (contentValues.size() % 50 == 0 || i >= recordSize) {
-			try {
-				new InsertDbTask(context, contentValues, HttpRequstResultProvider.MEMORY_CONTENT_URI).call();
-				contentValues.clear();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				Log.d("Collect memory info", "fail to save data to db");
-			}
-		}
-		
-		final Message updateMessage  = handler.obtainMessage(0, i, recordSize);
-		
-		if (handler != null) {
-			handler.post(new Runnable() {
-				
-				@Override
-				public void run() {
-					handler.updateTextView(updateMessage);
-				}
-			});
-		}
-		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			Log.d("Collect memory info", "fail to wait for 20 seconds");
-		}
+		executeOneAction(recordSize, format, i);
 	}
 
+}
+
+private void executeOneAction(int recordSize, SimpleDateFormat format, int i) {
+
+	preBuildMemoryInfo(recordSize, format, i);
+
+	buildMemoryInfo(format, i);
+
+	postBuildMemoryInfo(recordSize, format, i);
+
+	saveToDb(recordSize, i);
+
+	postBuildsaveToDb(recordSize, i);
+
+}
+
+public void postBuildsaveToDb(int recordSize, int i) {
+	
+	postMessage(recordSize, i);
+
+	postaction();
+}
+
+public void postBuildMemoryInfo(int recordSize, SimpleDateFormat format, int i) {
+	// Do nothing
+}
+
+public void preBuildMemoryInfo(int recordSize, SimpleDateFormat format, int i) {
+	// Do nothing
+}
+
+public void postaction() {
+	try {
+		Thread.sleep(1000);
+	} catch (InterruptedException e) {
+		Log.d("Collect memory info", "fail to wait for 20 seconds");
+	}
+}
+
+public void postMessage(int recordSize, int i) {
+	Log.d("CollectMemInfoTask", "postMessage");
+	final Message updateMessage = handler.obtainMessage(0, i, recordSize);
+
+	if (handler != null) {
+		handler.post(new Runnable() {
+
+			@Override
+			public void run() {
+				handler.updateTextView(updateMessage);
+			}
+		});
+	}
+}
+
+public void saveToDb(int recordSize, int i) {
+	Log.d("CollectMemInfoTask", "saveToDb");
+	if (contentValues.size() % 50 == 0 || i >= recordSize) {
+		try {
+			new InsertDbTask(context, contentValues, HttpRequstResultProvider.MEMORY_CONTENT_URI).call();
+			contentValues.clear();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Log.d("Collect memory info", "fail to save data to db");
+		}
+	}
+}
+
+protected void buildMemoryInfo(SimpleDateFormat format, int i) {
+	Log.d("Collect memory info", "The " + i + " time to collect memory info");
+	String currentDate = format.format(new Date());
+
+	ContentValues value = CommonUtils.buildMemoryContentValue(context, currentDate, withApi);
+	if (value != null) {
+		contentValues.add(value);
+	}
 }
 
 }

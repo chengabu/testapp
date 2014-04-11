@@ -45,6 +45,12 @@ public final static String COLUMN_SHARED_DIRTY = "SHARED_DIRTY";
 public final static String COLUMN_TOTAL_MEMORY = "TOTAL_MEMORY";
 public final static String COLUMN_AVAIL_MEMORY = "AVAIL_MEMORY";
 
+public final static String COLUMN_PID = "PID";
+public final static String COLUMN_CPU = "CPU";
+public final static String COLUMN_VSS = "VSS";
+public final static String COLUMN_RSS = "RSS";
+public final static String COLUMN_NAME = "NAME";
+
 public final static String COLUMN_CREATED_AT = "CREATE_AT";
 public final static String COLUMN_UPDATED_AT = "UPDATED_AT";
 
