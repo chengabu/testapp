@@ -41,6 +41,7 @@ public HttpRequestModel call() throws Exception {
 		con = (HttpURLConnection) u.openConnection();
 		con.setUseCaches(useCache);
 		con.setRequestMethod(method);
+		con.setConnectTimeout(10 * 1000);
 		long startTime = System.currentTimeMillis();
 		con.connect();
 		responseTime = System.currentTimeMillis() - startTime;

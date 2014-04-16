@@ -9,8 +9,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
 
-import com.example.testapplibrary.database.HttpRequstResultProvider;
-
 
 public class InsertDbTask implements Callable<Boolean> {
 	private Context context;

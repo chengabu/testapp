@@ -34,7 +34,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	UpdateViewTextHandler memoryHandler = new UpdateViewTextHandler(memoryView);
 
 	CollectMemoryInfoAfterHttpRequestTask task = new CollectMemoryInfoAfterHttpRequestTask(this, memoryHandler);
-	task.setPostSleepTime(30 * 1000);
+	task.setPostSleepTime(1000);
 	new Thread(task).start();
 
 }
