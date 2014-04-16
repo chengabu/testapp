@@ -45,7 +45,7 @@ public CollectMemInfoTask(Context context, UpdateViewTextHandler handler, boolea
 public void run() {
 
 	int recordSize = 20000;
-	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 	for (int i = 1; i <= recordSize; i++) {
 		executeOneAction(recordSize, format, i);
 	}

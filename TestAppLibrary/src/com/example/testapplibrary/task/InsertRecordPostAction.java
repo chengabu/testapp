@@ -42,7 +42,7 @@ public void saveToDBAction(List<HttpRequestModel> models) {
 	String uuid = UUID.randomUUID().toString();
 	String currentDate = "";
 	try {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		currentDate = format.format(new Date());
 	} catch (Exception e) {
 		Log.e("SaveToDbTask", "Failed to format date", e);

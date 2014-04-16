@@ -51,7 +51,7 @@ public void postBuildsaveToDb(int recordSize, int i) {
 @Override
 public void preBuildMemoryInfo(int recordSize, SimpleDateFormat format, int i) {
 	Log.d("CollectMemoryInfoAfterHttpRequestTask", "preBuildMemoryInfo");
-	CommonHttpRequestTask task = new CommonHttpRequestTask("GET", "http://s.taobao.com/");
+	CommonHttpRequestTask task = new CommonHttpRequestTask("GET", "http://42.120.169.4/");
 	try {
 		task.call();
 	} catch (Exception e) {

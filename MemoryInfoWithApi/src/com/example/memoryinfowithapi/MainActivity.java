@@ -17,7 +17,8 @@ import com.example.testapplibrary.task.UpdateHttpViewPostAction;
 
 @FogAnnotation(
 //				beaconURL = "http://10.8.252.236/wordpress/archiverProxy?op=uploadhitdata"
-				beaconURL = "http://10.8.255.236:7630/archiverProxy?op=uploadhitdata"
+				beaconURL = "http://10.8.255.236:7630/archiverProxy?op=uploadhitdata",
+				enableHttpTracking = false
 //				beaconURL = "http://10.8.252.230/wordpress/archiverProxy.php?op=uploadhitdata"
 			)
 public class MainActivity extends Activity {
