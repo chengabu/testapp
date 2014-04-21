@@ -9,6 +9,8 @@
     <string name="radio_value_http">Http</string>
     <string name="radio_value_https">Https</string>
     <string name="config_num_of_url">Number of request for per url</string>
+    <string name="url_config_layout_url">URLS</string>
+    <string name="url_config_layout_button_add">Add</string>
 
     <string-array name="caseNames">
         <item>Http Request With API</item>

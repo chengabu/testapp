@@ -20,7 +20,14 @@ import android.util.Log;
 
 public class HttpRequstResultProvider extends ContentProvider {
 
-public final static String AUTHORITY = "com.dell.test.withapi.http";
+public final static String AUTHORITY_WITH_API = "com.dell.test.withapi.http";
+
+public final static String AUTHORITY_WITHOUT_API = "com.dell.test.withoutapi.http";
+
+public final static String AUTHORITY_MEMORY_WITH_API = "com.dell.test.withapi.memory";
+
+public final static String AUTHORITY_MEMORY_WITHOUT_API = "com.dell.test.withoutapi.memory";
+
 public final static String DBNAME = "HTTPDB";
 public final static String HTTP_TABLE_NAME = "HTTP_RESULT";
 public final static String RESPONE_TIME_TABLE_NAME = "RESPONSE_TIME";
@@ -87,20 +94,39 @@ private final static Map<String, String> HTTP_COLUMN_MAP = new HashMap<String, S
 private final static Map<String, String> RESPONSE_TIME_COLUMN_MAP = new HashMap<String, String>();
 private final static Map<String, String> MEMORY_COLUMN_MAP = new HashMap<String, String>();
 
-public static final Uri HTTP_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + HTTP_TABLE_NAME);
-public static final Uri RESPONSE_TIME_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + RESPONE_TIME_TABLE_NAME);
-public static final Uri MEMORY_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + MEMORY_TABLE_NAME);
+public static final Uri HTTP_CONTENT_URI = Uri.parse("content://" + AUTHORITY_WITH_API + "/" + HTTP_TABLE_NAME);
+public static final Uri RESPONSE_TIME_CONTENT_URI = Uri.parse("content://" + AUTHORITY_WITH_API + "/"
+																+ RESPONE_TIME_TABLE_NAME);
+
+public static final Uri HTTP_CONTENT_URI_WITHOUT = Uri.parse("content://" + AUTHORITY_WITHOUT_API + "/"
+																+ HTTP_TABLE_NAME);
+public static final Uri RESPONSE_TIME_CONTENT_URI_WITHOUT = Uri.parse("content://" + AUTHORITY_WITHOUT_API + "/"
+																		+ RESPONE_TIME_TABLE_NAME);
+
+public static final Uri MEMORY_CONTENT_URI = Uri.parse("content://" + AUTHORITY_MEMORY_WITH_API + "/"
+														+ MEMORY_TABLE_NAME);
+public static final Uri MEMORY_CONTENT_URI_WITHOUT = Uri.parse("content://" + AUTHORITY_MEMORY_WITHOUT_API + "/"
+																+ MEMORY_TABLE_NAME);
 
 static {
 	mUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-	mUriMatcher.addURI(AUTHORITY, HTTP_TABLE_NAME, HTTP_REQUEST);
-	mUriMatcher.addURI(AUTHORITY, HTTP_TABLE_NAME + "/#", HTTP_REQUEST_ID);
+	mUriMatcher.addURI(AUTHORITY_WITH_API, HTTP_TABLE_NAME, HTTP_REQUEST);
+	mUriMatcher.addURI(AUTHORITY_WITH_API, HTTP_TABLE_NAME + "/#", HTTP_REQUEST_ID);
 
-	mUriMatcher.addURI(AUTHORITY, RESPONE_TIME_TABLE_NAME, RESPONSE_TIME);
-	mUriMatcher.addURI(AUTHORITY, RESPONE_TIME_TABLE_NAME + "/#", RESPONSE_TIME_ID);
+	mUriMatcher.addURI(AUTHORITY_WITHOUT_API, HTTP_TABLE_NAME, HTTP_REQUEST);
+	mUriMatcher.addURI(AUTHORITY_WITHOUT_API, HTTP_TABLE_NAME + "/#", HTTP_REQUEST_ID);
 
-	mUriMatcher.addURI(AUTHORITY, MEMORY_TABLE_NAME, MEMORY_TIME);
-	mUriMatcher.addURI(AUTHORITY, MEMORY_TABLE_NAME + "/#", MEMORY_TIME_ID);
+	mUriMatcher.addURI(AUTHORITY_WITH_API, RESPONE_TIME_TABLE_NAME, RESPONSE_TIME);
+	mUriMatcher.addURI(AUTHORITY_WITH_API, RESPONE_TIME_TABLE_NAME + "/#", RESPONSE_TIME_ID);
+
+	mUriMatcher.addURI(AUTHORITY_WITHOUT_API, RESPONE_TIME_TABLE_NAME, RESPONSE_TIME);
+	mUriMatcher.addURI(AUTHORITY_WITHOUT_API, RESPONE_TIME_TABLE_NAME + "/#", RESPONSE_TIME_ID);
+
+	mUriMatcher.addURI(AUTHORITY_MEMORY_WITH_API, MEMORY_TABLE_NAME, MEMORY_TIME);
+	mUriMatcher.addURI(AUTHORITY_MEMORY_WITH_API, MEMORY_TABLE_NAME + "/#", MEMORY_TIME_ID);
+
+	mUriMatcher.addURI(AUTHORITY_MEMORY_WITHOUT_API, MEMORY_TABLE_NAME, MEMORY_TIME);
+	mUriMatcher.addURI(AUTHORITY_MEMORY_WITHOUT_API, MEMORY_TABLE_NAME + "/#", MEMORY_TIME_ID);
 
 	HTTP_COLUMN_MAP.put(COLUMN_ID, COLUMN_ID);
 	HTTP_COLUMN_MAP.put(COLUMN_URL, COLUMN_URL);
