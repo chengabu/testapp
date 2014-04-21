@@ -35,7 +35,7 @@
 
         <provider
             android:name="com.example.testapplibrary.database.HttpRequstResultProvider"
-            android:authorities="com.dell.test.withoutapi.http"
+            android:authorities="com.dell.test.withoutapi.memory"
             android:exported="true"
             android:label="Http Request Provider"
             android:multiprocess="false" />
