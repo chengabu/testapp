@@ -1,0 +1,259 @@
+[
+{
+  "hitProperties": {
+    "applicationName": "AutomaticHttpTracking",
+    "clientApp": "AutomaticHttpTracking",
+    "clientAppScreen": "com.dell.testapp.automatichttptracking.TrackingStatusActivity",
+    "clientAppType": "Mobile App",
+    "clientAppVersion": "AutomaticHttpTracking 1.01",
+    "clientCarrier": "generic",
+    "clientCPUArchitecture": "armeabi",
+    "clientDeviceModel": "sdk",
+    "clientDeviceType": "Emulator",
+    "clientIP": "10.0.2.15",
+    "clientNetworkType": "Cellular",
+    "clientOperatingSystem": "Android",
+    "clientOperatingSystemVersion": "Android 2.3.3",
+    "clientScreenSize": "480x800",
+    "clientSignalStrength": 0.3684210479259491,
+    "clientURL": "http://www.AutomaticHttpTracking/com.dell.testapp.automatichttptracking.TrackingStatusActivity",
+    "contentCategory": "APP_SCREEN",
+    "httpVersion": "1.1",
+    "networkProvider": "Android",
+    "requestHeaders": [
+    {
+        "value": "Dalvik\/1.4.0 (Linux; U; Android 2.3.3; sdk Build\/GRI34)",
+        "name": "User-Agent"
+    },
+    {
+        "value": "text\/plain",
+        "name": "Content-Type"
+    }
+],
+    "requestURL": "http://www.AutomaticHttpTracking/com.dell.testapp.automatichttptracking.TrackingStatusActivity",
+    "responseCode": "200",
+    "sessionID": "Q9LEH7TBOSMX8ILX",
+    "sourceID": "Foglight Android SDK",
+    "sourceVersion": "6.0.0",
+    "startTime": 1404353752754000000,
+    "stopTime": 1404353755029000000,
+    "tenantID": "1"
+  }
+},
+{
+  "hitProperties": {
+    "applicationName": "AutomaticHttpTracking",
+    "clientApp": "AutomaticHttpTracking",
+    "clientAppScreen": "com.dell.testapp.automatichttptracking.TrackingStatusActivity",
+    "clientAppType": "Mobile App",
+    "clientAppVersion": "AutomaticHttpTracking 1.01",
+    "clientCarrier": "generic",
+    "clientCPUArchitecture": "armeabi",
+    "clientDeviceModel": "sdk",
+    "clientDeviceType": "Emulator",
+    "clientIP": "10.0.2.15",
+    "clientNetworkType": "Cellular",
+    "clientOperatingSystem": "Android",
+    "clientOperatingSystemVersion": "Android 2.3.3",
+    "clientScreenSize": "480x800",
+    "clientSignalStrength": 0.3684210479259491,
+    "clientURL": "http://10.30.178.14:5555/AndroidServlet/TestPostServlet",
+    "cookies": [
+    {
+        "value": "TestCookies1",
+        "name": "TestCookies"
+    },
+    {
+        "value": "TestCookies2",
+        "name": "TestCookies2"
+    }
+],
+    "httpVersion": "1.1",
+    "networkProvider": "Android",
+    "requestContentSize": 7817,
+    "requestHeaders": [
+    {
+        "value": "BasicHeaderName",
+        "name": "BasicHeaderName"
+    },
+    {
+        "value": "TestCookies=TestCookies1;TestCookies2=TestCookies2;",
+        "name": "Cookie"
+    },
+    {
+        "value": "addHeaderValue",
+        "name": "addHeaderName"
+    },
+    {
+        "value": "10.30.178.14",
+        "name": "Host"
+    },
+    {
+        "value": "7817",
+        "name": "Content-Length"
+    },
+    {
+        "value": "gzip",
+        "name": "Accept-Encoding"
+    },
+    {
+        "value": "5dc059ea-bdad-4791-beb0-2abbf1122ecf",
+        "name": "TEST_INDENTITY_ID"
+    },
+    {
+        "value": "client.execute(buildTargetHost(), request, buildHttpContext());",
+        "name": "executeRequest"
+    },
+    {
+        "value": "new HttpPost()",
+        "name": "CONSTRUCTOR"
+    },
+    {
+        "value": "Keep-Alive",
+        "name": "Connection"
+    },
+    {
+        "value": "application\/x-www-form-urlencoded",
+        "name": "Content-Type"
+    }
+],
+    "requestMethod": "POST",
+    "requestURL": "http://10.30.178.14:5555/AndroidServlet/TestPostServlet",
+    "responseCode": "200",
+    "responseContentSize": 7128,
+    "responseHeaders": [
+    {
+        "value": "Thu, 03 Jul 2014 02",
+        "name": "Date"
+    },
+    {
+        "value": "text\/html;charset=ISO-8859-1",
+        "name": "Content-Type"
+    },
+    {
+        "value": "7128",
+        "name": "Content-Length"
+    },
+    {
+        "value": "Apache-Coyote\/1.1",
+        "name": "Server"
+    }
+],
+    "sessionID": "Q9LEH7TBOSMX8ILX",
+    "sourceID": "Foglight Android SDK",
+    "sourceVersion": "6.0.0",
+    "startTime": 1404353752854000000,
+    "stopTime": 1404353754975000000,
+    "tenantID": "1",
+    "virtualServerIP": "10.30.178.14"
+  }
+},
+{
+  "hitProperties": {
+    "applicationName": "AutomaticHttpTracking",
+    "clientApp": "AutomaticHttpTracking",
+    "clientAppScreen": "com.dell.testapp.automatichttptracking.TrackingStatusActivity",
+    "clientAppType": "Mobile App",
+    "clientAppVersion": "AutomaticHttpTracking 1.01",
+    "clientCarrier": "generic",
+    "clientCPUArchitecture": "armeabi",
+    "clientDeviceModel": "sdk",
+    "clientDeviceType": "Emulator",
+    "clientIP": "10.0.2.15",
+    "clientNetworkType": "Cellular",
+    "clientOperatingSystem": "Android",
+    "clientOperatingSystemVersion": "Android 2.3.3",
+    "clientScreenSize": "480x800",
+    "clientSignalStrength": 0.3684210479259491,
+    "clientURL": "http://10.30.178.14:5555/AndroidServlet/TestPostServlet",
+    "cookies": [
+    {
+        "value": "TestCookies1",
+        "name": "TestCookies"
+    },
+    {
+        "value": "TestCookies2",
+        "name": "TestCookies2"
+    }
+],
+    "httpVersion": "1.1",
+    "networkProvider": "Android",
+    "requestContentSize": 7817,
+    "requestHeaders": [
+    {
+        "value": "BasicHeaderName",
+        "name": "BasicHeaderName"
+    },
+    {
+        "value": "TestCookies=TestCookies1;TestCookies2=TestCookies2;",
+        "name": "Cookie"
+    },
+    {
+        "value": "addHeaderValue",
+        "name": "addHeaderName"
+    },
+    {
+        "value": "10.30.178.14",
+        "name": "Host"
+    },
+    {
+        "value": "7817",
+        "name": "Content-Length"
+    },
+    {
+        "value": "gzip",
+        "name": "Accept-Encoding"
+    },
+    {
+        "value": "6af752f1-481e-48e3-a9c1-d6dfc35276ca",
+        "name": "TEST_INDENTITY_ID"
+    },
+    {
+        "value": "client.execute(request);",
+        "name": "executeRequest"
+    },
+    {
+        "value": "new HttpPost()",
+        "name": "CONSTRUCTOR"
+    },
+    {
+        "value": "Keep-Alive",
+        "name": "Connection"
+    },
+    {
+        "value": "application\/x-www-form-urlencoded",
+        "name": "Content-Type"
+    }
+],
+    "requestMethod": "POST",
+    "requestURL": "http://10.30.178.14:5555/AndroidServlet/TestPostServlet",
+    "responseCode": "200",
+    "responseContentSize": 7128,
+    "responseHeaders": [
+    {
+        "value": "Thu, 03 Jul 2014 02",
+        "name": "Date"
+    },
+    {
+        "value": "text\/html;charset=ISO-8859-1",
+        "name": "Content-Type"
+    },
+    {
+        "value": "7128",
+        "name": "Content-Length"
+    },
+    {
+        "value": "Apache-Coyote\/1.1",
+        "name": "Server"
+    }
+],
+    "sessionID": "Q9LEH7TBOSMX8ILX",
+    "sourceID": "Foglight Android SDK",
+    "sourceVersion": "6.0.0",
+    "startTime": 1404353752867000000,
+    "stopTime": 1404353755263000000,
+    "tenantID": "1",
+    "virtualServerIP": "10.30.178.14"
+  }
+}
+]
